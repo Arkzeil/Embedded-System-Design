@@ -9,6 +9,13 @@ A:
 A:  
 	No, since we used cross compiler to compiler our C code, the output assembly file is specific to the ARM CPU architecture. Our computer is x86 architecture, so there's no way that the hello_world can run on our computer.
 
+supplementary info.:  
+	hf: armhf architecture, using FPU to calculate and FPU register for parameter transferring. Best performance, high interrupt cost
+	ABI: Application Binary Interface  
+	EABI: Embedded ABI  
+
+
+
 ref:  
 	https://ryan0988.pixnet.net/blog/post/171244470   
 	https://blog.csdn.net/weixin_39328406/article/details/117202335   
