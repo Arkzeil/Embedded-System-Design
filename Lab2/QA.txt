@@ -3,9 +3,21 @@
 	cmake:简单的生成makefile文件给上面那个make用，可以跨平台生成对应平台能用的makefile。根据一个叫CMakeLists.txt文件（学名：组态档）去生成makefile
 
 5.2 Why there are so many arguments in the compilation command(step 4.4.2)? What are they for?
+	-I dir
+    		Add the directory dir to the list of directories to be searched for header files.  Directories named
+    		by -I are searched before the standard system include directories.
+	-Wl,option
+    		Pass option as an option to the linker.  If option contains commas, it is split into multiple options
+    		at the commas.  You can use this syntax to pass an argument to the option.
+	-lpthread:
+		程式內含有<pthread.h>，編譯需額外加上-lpthread，因為該header在標準linux的import library內沒有，需在編譯時連結
+	
 
 5.3 What is libopencv_world.so.3.4.7 for? Why do we need to use LD_LIBRARY_PATH=. ./demo to run the 
 executable? What would happen if we just run with ./demo? Why?
+	
+	libopencv_world.so: a shared library that contains all of the OpenCV functions. It is a convenient way to include OpenCV in your project, as you only need to link to a single library
+	LD_LIBRARY_PATH: 一個環境變數，讓runtime linker (ld.so)去多找LD_LIBRARY_PATH所指定的路徑。
 
 5.4 It is so complex and difficult to show a picture by using the framebuffer. Why don’t we just use cv::imshow() to do 
 this work?
