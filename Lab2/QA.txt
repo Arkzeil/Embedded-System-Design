@@ -21,6 +21,7 @@ executable? What would happen if we just run with ./demo? Why?
 
 5.4 It is so complex and difficult to show a picture by using the framebuffer. Why don’t we just use cv::imshow() to do 
 this work?
+	cv::imshow() function in OpenCV is used to display an image in a window. However, embedded systems typically do not have graphical user interfaces (GUIs), so there is 	no window to display the image in.
 
 5.5 What is a framebuffer?
 	framebuffer是一块内存，里面存放着一帧图像，每帧图像包含每个像素颜色值。BPP，像素深度，指存储每个像素所用的位数。内容对应于屏幕上的界面显示
@@ -32,3 +33,5 @@ sudo cat fb0 > /dev/fb0
 
 5.7 You can find there is a file named fb1 under /dev directory. What is the difference between /dev/fb0 and /dev/fb1? 
 Why we use /dev/fb0 rather than /dev/fb1?
+	dev/fb0 is the primary framebuffer device, while /dev/fb1 is a secondary framebuffer device. The primary framebuffer device is used to display the image that is 	visible on the screen, while the secondary framebuffer device can be used to display other images, such as a splash screen or a console
+	If you need to display an image on the screen, you should use the primary framebuffer device, /dev/fb0. If you need to display an image that is not visible on the 	screen, such as a splash screen or a console, you can use the secondary framebuffer device, /dev/fb1
