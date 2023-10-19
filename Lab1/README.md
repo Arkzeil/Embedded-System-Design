@@ -4,4 +4,4 @@ The VM must install in VirtualBox in order to read the SD card. I tried VMWare a
 ---  
 Login Loop?  
 A: My guess is that it's due to the system PATH variable being modified, and you didn't restore it before turning off the computer.  
-  Use Ctrl + Alt + F3 into the shell(username:root, password:yourpassword), restore(you may find that many command become invalid, I used emacs that still worked normal to modify the file) the /etc/environment file to what it should be. Then reboot.  
+  Use Ctrl + Alt + F3 into the shell(username:root, password:yourpassword), restore(you may find that many command become invalid(need to specify complete path), I used /usr/bin/emacs that still worked normal to modify the file) the /etc/environment file to what it should be. Then reboot.  
